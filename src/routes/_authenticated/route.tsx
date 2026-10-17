@@ -1,6 +1,6 @@
 import { createFileRoute, Link, Outlet, redirect, useNavigate } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { LayoutDashboard, Home, Sparkles, LineChart, Award, LogOut, ListChecks } from "lucide-react";
+import { LayoutDashboard, Home, Sparkles, LineChart, Award, LogOut, ListChecks, Mic } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Logo } from "@/components/Logo";
 import { profileQuery } from "@/lib/data";
@@ -20,6 +20,7 @@ const nav = [
   { to: "/home", label: "Home", icon: Home },
   { to: "/generate", label: "AI Generator", icon: Sparkles },
   { to: "/quiz", label: "Quiz me", icon: ListChecks },
+  { to: "/interview", label: "AI Interview", icon: Mic },
   { to: "/progress", label: "Progress", icon: LineChart },
   { to: "/certificates", label: "Certificates", icon: Award },
 ] as const;
