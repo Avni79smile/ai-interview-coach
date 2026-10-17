@@ -15,3 +15,4 @@
 - Coding assignments are real LeetCode problems from a fixed bank (`src/lib/leetcode.ts`, AI only picks slugs). JS/Python run locally in Web Workers (`src/lib/runner.ts`, Python via Pyodide CDN); other languages are evaluated by an AI judge server fn whose outputs are graded client-side against stored expected values — no server-side code execution available on the edge runtime.
 - Home catalog is a static curated list (`src/lib/catalog.ts`); enrolling generates a per-user course from its outline so progress stays in `courses`.
 - Signed-in pages live under `src/routes/_authenticated/` with a client-side session gate.
+- AI Interview (`src/routes/_authenticated/interview.tsx`) is stateless: transcript lives in page state and is sent to server fns in `src/lib/interview.functions.ts` each turn; avatar voice uses browser speech synthesis/recognition — no extra storage or paid voice APIs.

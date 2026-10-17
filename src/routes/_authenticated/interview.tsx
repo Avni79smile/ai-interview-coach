@@ -195,10 +195,10 @@ function InterviewPage() {
         <img src={who.img} alt={who.name} width={816} height={816} className="size-20 rounded-2xl object-cover" />
         <div><h1 className="text-3xl font-bold">Your interview feedback</h1><p className="text-muted-foreground">{round === "hr" ? "HR" : "Technical"} round · {topic}</p></div>
       </div>
-      <div className="flex flex-col items-center gap-2 rounded-3xl bg-hero p-8 text-center shadow-soft">
-        <p className="text-6xl font-bold text-primary-foreground">{report.score}<span className="text-2xl">/100</span></p>
+      <div className="flex flex-col items-center gap-2 rounded-3xl bg-ink p-8 text-center shadow-soft">
+        <p className="text-6xl font-bold text-ink-foreground">{report.score}<span className="text-2xl">/100</span></p>
         <p className="rounded-full bg-accent px-4 py-1 text-sm font-semibold text-accent-foreground">{report.verdict}</p>
-        <p className="max-w-xl text-primary-foreground/90">{report.summary}</p>
+        <p className="max-w-xl text-ink-foreground/85">{report.summary}</p>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="rounded-3xl border bg-card p-5"><h3 className="mb-2 flex items-center gap-2 font-bold"><CheckCircle2 className="size-4 text-primary" />Strengths</h3><ul className="list-disc space-y-1 pl-5 text-sm">{report.strengths.map((s) => <li key={s}>{s}</li>)}</ul></div>
@@ -231,7 +231,7 @@ function InterviewPage() {
             <div className={`rounded-full p-1.5 transition ${speaking ? "bg-accent shadow-[0_0_0_10px_color-mix(in_oklch,var(--accent)_25%,transparent)]" : "bg-sidebar-accent"}`}>
               <img src={who.img} alt={`${who.name}, your interviewer`} width={816} height={816} className={`size-40 rounded-full object-cover md:size-56 ${speaking ? "animate-float" : ""}`} />
             </div>
-            <div className="mt-3 flex h-5 items-end gap-1">
+            <div className="mt-3 flex h-5 gap-1">
               {speaking ? [0, 1, 2, 3, 4].map((k) => <span key={k} className="w-1.5 animate-talk rounded bg-accent" style={{ animationDelay: `${k * 0.1}s` }} />) : busy ? <span className="text-xs text-ink-foreground/70">{who.name} is thinking…</span> : null}
             </div>
             <p className="mt-1 font-semibold text-ink-foreground">{who.name} · {who.title}</p>
